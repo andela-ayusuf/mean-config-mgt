@@ -1,0 +1,8 @@
+---
+# - name: Check if Node is installed
+#   command: bash -c "node -v | grep node"
+#   register: node_installed
+#   ignore_errors: True
+
+- name: Install Node
+  apt: name=nodejs state=present force=yes
