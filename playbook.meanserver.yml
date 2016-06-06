@@ -3,8 +3,10 @@
   user: "{{user}}"
   become: yes
   become_method: sudo
-  vars_file:
+  connection: ssh
+  vars_files:
     - "vars/vars.yml"
   roles:
-    - mongodb
-    - node
+    - { role: mongodb, tags: 'mongodb' }
+    - { role: node, tags: 'node' }
+    - { role: packages, tags: 'packages' }

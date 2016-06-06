@@ -1,0 +1,12 @@
+---
+- name: Install Gulp and Bower packages globally
+  npm: name={{item}} global=yes state=present
+  with_items:
+    - gulp
+    - bower
+
+# - name: Install modules in package.json file
+#   npm: path=/app/root/directory
+
+# - name: Install modules in bower.json file
+#   bower: path=/app/root/directory
