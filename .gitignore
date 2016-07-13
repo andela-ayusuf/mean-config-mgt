@@ -39,3 +39,4 @@ build/
 vars
 .vagrant
 *.retry
+Vagrantfile
