@@ -3,10 +3,11 @@
   user: "{{user}}"
   become: yes
   become_method: sudo
-  connection: ssh
   vars_files:
     - "vars/vars.yml"
   roles:
-    - { role: mongodb, tags: 'mongodb' }
-    - { role: node, tags: 'node' }
-    - { role: packages, tags: 'packages' }
+  - provision
+  - mongodb
+  - node
+  - packages
+  - clonerepo

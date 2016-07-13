@@ -1,0 +1,6 @@
+---
+- name: Clone the project git repository
+  git: repo={{git_repo_url}} dest=/home/{{app_root_dir}} clone=yes update=no
+
+- name: Install modules in package.json file
+  npm: path=/home/{{app_root_dir}}
