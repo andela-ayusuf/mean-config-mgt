@@ -1,3 +1,6 @@
-user: VM-USER
-git_repo_url: GITHUB-REPO-URL
-app_root_dir: PROJECT-ROOT-DIRECTORY
+user: VM_USER
+git_repo_url: GITHUB_REPO_URL
+app_root_dir: APP_ROOT_DIR
+app_name: doc-cache
+license_key: NEWRELIC_LICENSE_KEY
+startup_script_name: STARTUP_SCRIPT_NAME  # e.g server.js
