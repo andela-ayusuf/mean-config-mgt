@@ -39,8 +39,6 @@ $ cucumber features/install.feature
 
 **Note**
 
-- To have the application up and running, you have to `ssh` into the application and start the app.
-
 And with that done, we have our MEAN stack project configured which will also be monitored by New Relic.
 
 Now you can head over to your New Relic dashboard and view your app metrics.
