@@ -3,6 +3,8 @@
   command: bash -c "dpkg --get-selections | grep mongodb"
   register: mongodb_installed
   ignore_errors: True
+  tags:
+    - mongodb
 
 - name: Install MongoDB
   apt: name={{item}} state=present force=yes
@@ -14,3 +16,5 @@
     - openssl
     - libssl-dev
     - pkg-config
+  tags:
+    - mongodb

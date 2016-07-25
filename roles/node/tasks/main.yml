@@ -3,6 +3,10 @@
   command: bash -c "dpkg --get-selections | grep node"
   register: node_installed
   ignore_errors: True
+  tags:
+    - nodejs
 
 - name: Install Node
   apt: name=nodejs state=present force=yes
+  tags:
+    - nodejs
