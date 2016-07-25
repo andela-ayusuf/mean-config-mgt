@@ -1,6 +1,32 @@
 ---
 - name: Clone the project git repository
   git: repo={{git_repo_url}} dest=/home/{{app_root_dir}} clone=yes update=no
+  tags:
+    - git_clone
+
+- name: Install new relic in app root directory
+  npm: name=newrelic path=/home/{{app_root_dir}}
+
+- name: Create newrelic.js file in app root directory
+  file: path=/home/{{app_root_dir}}/newrelic.js state=touch
+  tags:
+    - relic_setup
+
+- name: Copy the newrelic.js file
+  template: src=newrelic.j2 dest=/home/{{app_root_dir}}/newrelic.js
+  tags:
+    - relic_setup
+
+- name: Require newrelic in app startup script
+  lineinfile:
+    dest: "/home/{{app_root_dir}}/{{ startup_script_name }}"
+    insertbefore: BOF
+    line: require('newrelic');
+    state: present
+  tags:
+    - relic_setup
 
 - name: Install modules in package.json file
   npm: path=/home/{{app_root_dir}}
+  tags:
+    - node_modules
