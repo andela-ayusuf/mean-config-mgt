@@ -30,3 +30,8 @@
   npm: path=/home/{{app_root_dir}}
   tags:
     - node_modules
+
+- name: Start app
+  command: forever start {{ startup_script_name }}
+  args:
+    chdir: "/home/{{app_root_dir}}"

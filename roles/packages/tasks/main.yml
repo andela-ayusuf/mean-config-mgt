@@ -4,5 +4,6 @@
   with_items:
     - gulp
     - bower
+    - forever
   tags:
     - gulp_bower

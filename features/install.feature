@@ -26,6 +26,6 @@ Feature: Configure MEAN stack and New Relic
     Then it should be successful
     And the newrelic.js file should exists
 
-  Scenario: Install modules in package.json file
-    When I install modules in package.json file
+  Scenario: Install modules in package.json and start the app
+    When I install modules in package.json and start the app
     Then it should be successful

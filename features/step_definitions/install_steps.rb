@@ -55,8 +55,8 @@ And(/^the newrelic.js file should exists$/) do
   expect(output).to match("newrelic.js")
 end
 
-# Scenario: Install modules in package.json file
-When(/^I install modules in package.json file$/) do
+# Scenario: Install modules in package.json and start the app
+When(/^I install modules in package.json and start the app$/) do
   cmd = "ansible-playbook -i inventory.ini --private-key=#{PATHTOKEY} playbook.meanserver.yml --tags 'node_modules'"
   output, error, @status = Open3.capture3 "#{cmd}"
 end
