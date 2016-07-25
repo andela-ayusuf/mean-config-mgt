@@ -6,8 +6,8 @@
   vars_files:
     - "vars/vars.yml"
   roles:
-  - provision
-  - mongodb
-  - node
-  - packages
-  - clonerepo
+    - provision
+    - mongodb
+    - node
+    - packages
+    - clonerepo
